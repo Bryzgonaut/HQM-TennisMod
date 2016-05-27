@@ -19,21 +19,23 @@ namespace HQM_Dedicated_Tennis
 
             //debug get zone puck is in
             while (true)
-            {                
+            {
                 string pZone = Court.GetZone(Puck.Position);
 
-                if (pZoneOld != pZone)
+                if (pZoneOld != pZone && Puck.Position.Y < 0.1)
                 {
                     Chat.SendMessage(pZone);
                     Console.Beep();
-                }
-                pZoneOld = pZone;
-
-                if(pZone == "OUT!")
-                {
-                    Game.Start();
+                    pZoneOld = pZone;
                 }
                 
+
+                if (pZone == "OUT!"&&Puck.Position.Y<0.1)
+                {
+                    Game.Start();
+                    pZoneOld = pZone;
+                }
+
             }
 
         }

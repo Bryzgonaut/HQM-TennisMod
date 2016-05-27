@@ -14,9 +14,15 @@ namespace HQM_Dedicated_Tennis
             HQMVector redServicePoint = new HQMVector(19f, 1f, 40.5f);
             Puck.Position = redServicePoint;
             Puck.Velocity = new HQMVector(0f, 0f, 0f);
-            
+            Puck.RotationalVelocity = new HQMVector(0f, 0f, 0f);
+
+            Chat.SendMessage("Red Serve");
+
         }
-    
+
+
+
+
 
 
 
